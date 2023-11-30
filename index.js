@@ -1,15 +1,18 @@
-import {NativeModules} from 'react-native';
+import { NativeModules } from "react-native";
 
-const {DouYinModule} = NativeModules;
+const { DouYinModule } = NativeModules;
 
-export default Douyin={
-  init(appKey){
-    DouYinModule.init(appKey)
+export default Douyin = {
+  init(appKey) {
+    DouYinModule.init(appKey);
   },
-  auth(scope,state){
-    return DouYinModule.auth(scope,state)
+  auth(scope, state) {
+    return DouYinModule.auth(scope, state);
   },
-  shareVideo(path,publish){
-    return DouYinModule.shareVideo(path,publish)
-  }
+  shareVideo(path, publish) {
+    return DouYinModule.shareVideo(path, publish);
+  },
+  shareLink(options) {
+    return DouYinModule.shareLink(options);
+  },
 };

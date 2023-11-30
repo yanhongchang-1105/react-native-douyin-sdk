@@ -1,19 +1,19 @@
-# react-native-douyin
+# react-native-douyin-sdk
 
 ## Getting started
 
-`$ npm install react-native-douyin --save`
+`$ npm install react-native-douyin-sdk --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-douyin`
+`$ react-native link react-native-douyin-sdk`
 
 ### Manual installation
 
 
 #### iOS
 
-1. pod 'react-native-douyin', :path => '../node_modules/react-native-douyin/react-native-douyin.podspec'
+1. pod 'react-native-douyin-sdk', :path => '../node_modules/react-native-douyin-sdk/react-native-douyin-sdk.podspec'
 
 2. 为了保证可以正常唤起抖音短视频，在 info 标签栏的Custom iOS Target Properties中找到 LSApplicationQueriesSchemes 如果没有点击“+”添加一个并设置 Key 为LSApplicationQueriesSchemes, Value 类型为数组，将如下配置粘贴到数组中：
 
@@ -38,7 +38,7 @@
 @implementation AppDelegate
 
 
-
+#IOS9以下
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
  
  if ([[DouyinOpenSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]]
@@ -79,7 +79,7 @@
   	```
 		 repositories {
 			...
-        maven { url 'https://dl.bintray.com/aweme-open-sdk-team/public' }
+        maven { url 'https://artifact.bytedance.com/repository/AwemeOpenSDK' } //抖音 sdk
 		 }
   	```
 3. 若您的应用的代码存在混淆，若在混淆的情况下存在不能吊起分享的情况，请在您的proguard文件中添加 -keep class com.bytedance.sdk.open.aweme.**
@@ -90,7 +90,7 @@
 
 ## Usage
 ```javascript
-import Douyin from 'react-native-douyin';
+import Douyin from 'react-native-douyin-sdk';
 ```
 
 #### init(appKey) 注册
@@ -117,4 +117,23 @@ import Douyin from 'react-native-douyin';
 - `isPublish` {Boolean} 是否直接进入发布
 
 |
+
+#### shareLink(ShareWebpageMetadata) 分享网页
+
+ShareWebpageMetadata
+
+| name          | type   | description                       |
+| ------------- | ------ | --------------------------------- |
+| title         | String | 标题                              |
+| description   | String | 描述                              |
+| thumbImageUrl | String | 缩略图地址，本库会自动压缩到 32KB |
+| webpageUrl    | String | HTML 链接                         |
+
+Return:
+
+| name    | type   | description                         |
+| ------- | ------ | ----------------------------------- |
+| errCode |  String | true if authorization succeed          |
+| errStr  | String | Error message if any error occurred |
+
 

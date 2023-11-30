@@ -1,7 +1,7 @@
 {
-  "name": "react-native-douyin",
+  "name": "react-native-douyin-sdk",
   "title": "React Native Douyin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "抖音登录、分享",
   "main": "index.js",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/z448401921/react-native-douyin.git",
-    "baseUrl": "https://github.com/z448401921/react-native-douyin"
+    "url": "git+https://github.com/yanhongchang-1105/react-native-douyin-sdk.git",
+    "baseUrl": "https://github.com/yanhongchang-1105/react-native-douyin-sdk"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
-    "name": "ainuo",
-    "email": "448401921@qq.com"
+    "name": "yhc",
+    "email": "2228932821@qq.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
