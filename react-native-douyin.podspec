@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.version      = package["version"]
   s.summary      = package["description"]
   s.description  = <<-DESC
-                  react-native-douyin
+                  react-native-douyin-sdk
                    DESC
   s.homepage     = "https://github.com/yanhongchang-1105/react-native-douyin-sdk.git"
   s.license      = "MIT"
